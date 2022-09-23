@@ -2,6 +2,11 @@
   "name": "worker",
   "version": "1.0.0",
   "dependencies": {
-    
+    "nodemon": "^2.0.16",
+    "redis": "^4.1.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon"
   }
 }
