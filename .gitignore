@@ -1,1 +1,7 @@
 /.idea/
+/Fibonacci-Docker.iml
+/server.iml
+/worker.iml
+/server/package-lock.json
+/worker/package-lock.json
+/nginx.iml
