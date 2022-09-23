@@ -1,0 +1,18 @@
+FROM node:16-alpine
+
+WORKDIR '/app'
+
+COPY ./package.json /app
+
+# To Fix Permissions for Packages
+RUN npm config set unsafe-perm true
+
+RUN npm install --force
+
+COPY . /app
+
+RUN chown -R node /app/node_modules
+
+USER node
+
+CMD ["npm", "run", "dev"]
