@@ -1,6 +1,16 @@
+language: generic
 sudo: required
 services:
   - docker
 
 before_install:
-  - docker build -t poltronierid/fibonacci-docker -f ./client/Dockerfile.dev ./server/Dockerfile.dev
+  - docker build -t dpoltronieri/fibonacci-docker-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true dpoltronieri/fibonacci-docker-test npm test
+
+after_success:
+  - docker build -t dpoltronieri/multi-client ./client
+  - docker build -t dpoltronieri/multi-ngnx ./ngnx
+  - docker build -t dpoltronieri/multi-server ./server
+  - docker build -t dpoltronieri/multi-worker ./worker
