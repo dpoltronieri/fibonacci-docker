@@ -14,3 +14,10 @@ after_success:
   - docker build -t dpoltronieri/multi-ngnx ./ngnx
   - docker build -t dpoltronieri/multi-server ./server
   - docker build -t dpoltronieri/multi-worker ./worker
+# Login to docker cli
+  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+# Push images to docker hub
+  - docker push dpoltronieri/multi-client
+  - docker push dpoltronieri/multi-ngnx
+  - docker push dpoltronieri/multi-server
+  - docker push dpoltronieri/multi-worker
