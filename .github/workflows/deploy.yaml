@@ -33,8 +33,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: multi-gh
-          environment_name: Multigh-env
+          application_name: Fibonacci Docker
+          environment_name: Fibonaccidocker-env
           existing_bucket_name: elasticbeanstalk-us-east-2-944516700047
           region: us-east-2
           version_label: ${{ github.sha }}
