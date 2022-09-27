@@ -16,12 +16,12 @@ jobs:
      # - run: docker run -e CI=true dpoltronieri/fibonacci-docker-test npm test
 
       - run: docker build -t dpoltronieri/multi-client ./client
-      - run: docker build -t dpoltronieri/multi-ngnx ./nginx
+      - run: docker build -t dpoltronieri/multi-nginx ./nginx
       - run: docker build -t dpoltronieri/multi-server ./server
       - run: docker build -t dpoltronieri/multi-worker ./worker
 
       - run: docker push dpoltronieri/multi-client
-      - run: docker push dpoltronieri/multi-ngnx
+      - run: docker push dpoltronieri/multi-nginx
       - run: docker push dpoltronieri/multi-server
       - run: docker push dpoltronieri/multi-worker
 
@@ -33,7 +33,7 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: Fibonacci Docker
+          application_name: fibonacci-docker
           environment_name: Fibonaccidocker-env
           existing_bucket_name: elasticbeanstalk-us-east-2-944516700047
           region: us-east-2
