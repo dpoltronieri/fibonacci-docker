@@ -4,7 +4,7 @@ services:
     image: "dpoltronieri/multi-client"
     mem_limit: 128m
     hostname: client
-  api:
+  server:
     image: "dpoltronieri/multi-server"
     mem_limit: 128m
     hostname: api
