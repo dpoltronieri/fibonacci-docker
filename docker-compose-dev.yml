@@ -5,6 +5,9 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres_password
 
+  redis:
+    image: 'redis:latest'
+
   nginx:
     restart: always
     build:
@@ -15,9 +18,6 @@ services:
     depends_on:
       - api
       - client
-
-  redis:
-    image: 'redis:latest'
 
   api:
     build:
